@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['job']">Job Form</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['platform']">Platform</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['random']">Random</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['search', 'a534925a6a295361930b6b9fff675bd0']">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container d-flex h-100">
+  <div class="row align-self-center w-100">
+      <div class="col-md-10 mx-auto">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>
+    

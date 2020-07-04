@@ -1,0 +1,25 @@
+<h1 class="display-4"><p style="color: white;">Platforms</p></h1>
+<div class="jumbotron">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Project count</th>
+            <th scope="col">Homepage</th>
+            <th scope="col">Color</th>
+            <th scope="col">Default Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of platform; index as i">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{p.name}}</td>
+            <td>{{p.project}}</td>
+            <td>{{p.homepage}}</td>
+            <td>{{p.color}}</td>
+            <td>{{p.default_language}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

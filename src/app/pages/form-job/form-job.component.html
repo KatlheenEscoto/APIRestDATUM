@@ -1,0 +1,63 @@
+<h1 class="display-4"><p style="color: white;">Apply for Job</p></h1>
+<div class="jumbotron">
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label for="fullName" class="col-sm-2 col-form-label">Full name</label>
+          <div class="col-sm-10">
+            <input type="input" class="form-control" id="fullName" name="fullName" formControlName="fullName" [ngClass]="{ 'is-invalid': f.fullName.errors }">
+            <div *ngIf="f.fullName.errors" class="invalid-feedback">
+              <div *ngIf="f.fullName.errors.required">Full Name is required</div>
+              <div *ngIf="f.fullName.errors.pattern">Full Name only letters</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email address</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" name="email" formControlName="email" [ngClass]="{ 'is-invalid': f.email.errors }">
+              <div *ngIf="f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="message" class="col-sm-2 col-form-label">Message</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="message" name="message" formControlName="message" [ngClass]="{ 'is-invalid': f.message.errors }"></textarea>
+              <div *ngIf="f.message.errors" class="invalid-feedback">
+                <div *ngIf="f.message.errors.required">Message is required</div>
+                <div *ngIf="f.message.errors.maxlength">Message must be maximum 250 characters</div>
+            </div>
+            </div>
+        </div> 
+        <!--<div class="form-group row">
+            <label for="file" class="col-sm-2 col-form-label">Upload CV</label>
+            <div class="col-sm-10">
+                <div class="custom-file col-sm-4">
+                    <input type="file" class="custom-file-input btn btn-secondary" id="file" name="file" >
+                    <label class="custom-file-label" for="file">Choose file</label>
+                </div>
+                <br>
+                <small>Upload your CV/Resume or any another relevant file. Max file size 50 MB.</small>
+                  
+            </div>
+        </div>-->
+        <div class="form-group row">
+          <label for="file" class="col-sm-2 col-form-label">Upload CV</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control-file" id="file"  formControlName="file" [ngClass]="{ 'is-invalid': f.file.errors }">
+            <small>Upload your CV/Resume or any another relevant file. Max file size 50 MB.</small>
+            <div *ngIf="f.file.errors" class="invalid-feedback">
+              <div *ngIf="f.file.errors.required">File is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button class="btn btn-primary">Send Application</button>
+          </div>
+        </div>
+      </form>
+</div>
